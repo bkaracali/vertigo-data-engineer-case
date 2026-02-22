@@ -36,3 +36,40 @@ To run the project locally with a PostgreSQL instance:
 2. Start the services:
    ```bash
    docker-compose up --build
+
+## Part 2: Analytical Data Modeling (dbt & BigQuery)
+
+In this section, I transformed raw user-level activity logs into a structured analytical layer using **dbt** to drive business insights.
+
+### 🛠 Tech Stack
+- **Data Warehouse:** Google BigQuery
+- **Transformation Tool:** dbt (Data Build Tool)
+- **BI Tool:** Looker Studio
+
+### 📋 Key Features & Modeling Logic
+- **Single Source of Truth:** Created a centralized model named `daily_metrics` that aggregates granular user data into daily summaries by country and platform.
+- **Advanced Business Metrics:**
+    - **ARPDAU:** Calculated Average Revenue Per Daily Active User by merging IAP and Ad revenue streams.
+    - **Gameplay Balance:** Developed **Win/Defeat Ratios** to provide signals for game difficulty and player retention.
+    - **Technical Stability:** Implemented **Server Error per DAU** to monitor system health in real-time.
+- **Data Quality & Robustness:**
+    - **Data Cleaning:** Implemented a transformation layer to handle `NULL` or empty `country` values, remapping them to `Unknown`.
+    - **Error Prevention:** Utilized `SAFE_DIVIDE` across all ratio calculations to ensure model stability against division-by-zero errors.
+    - **Source Management:** Used dbt **Sources** and **Ref** macros to ensure clean data lineage and modularity.
+
+### 💻 Local dbt Execution
+To run the analytical models and view documentation:
+1. Navigate to the dbt directory: `cd analytics-dbt/analytics_models`
+2. Build the models:
+   ```bash
+   dbt run
+3. Generate and view the interactive lineage graph:
+   ```bash
+   dbt docs generate
+   dbt docs serve 
+
+### 📊 Visualization
+The final transformation layer is visualized through a Looker Studio Dashboard, focusing on
+- **Monetization Trends:** Daily revenue tracking vs. DAU growth.
+- **Platform Performance:** Comparison of stability and engagement between iOS and Android.
+- **Global Reach:** Revenue and user distribution by country.
