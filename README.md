@@ -100,3 +100,4 @@ Then, navigate to the project and run:
     cd analytics-dbt/analytics_models
     dbt deps
     dbt run
+    ```
