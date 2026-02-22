@@ -3,7 +3,7 @@
 This repository contains a two-part solution for the Vertigo Games Data Engineer case. 
 
 - **Part 1:** A robust Backend API for managing game clans, integrated with Google Cloud.
-- **Part 2:** Analytical data modeling using dbt and BigQuery (Work in Progress).
+- **Part 2:** Analytical data modeling using dbt and BigQuery.
 
 ---
 
@@ -73,3 +73,30 @@ The final transformation layer is visualized through a Looker Studio Dashboard, 
 - **Monetization Trends:** Daily revenue tracking vs. DAU growth.
 - **Platform Performance:** Comparison of stability and engagement between iOS and Android.
 - **Global Reach:** Revenue and user distribution by country.
+
+### 🚀 Getting Started & Installation
+**Prerequisites**
+- **Python 3.9+** 
+- **Docker & Docker Compose** 
+- **Google Cloud SDK (gcloud) (For BigQuery access)** 
+- **Git** 
+
+1. Clone the Repository
+    ```bash
+    git clone https://github.com/bkaracali/vertigo-data-engineer-case.git
+    cd vertigo-data-engineer-case
+2. Setup & Run Part 1 (Backend API)
+    ```bash
+    cd clan-backend
+    # Install dependencies locally if not using Docker:
+    # pip install -r requirements.txt
+    docker-compose up --build
+3. Setup & Run Part 2 (dbt)
+First, ensure you have dbt installed:
+    ```bash
+    pip install dbt-bigquery
+Then, navigate to the project and run:
+    ```bash
+    cd analytics-dbt/analytics_models
+    dbt deps
+    dbt run
