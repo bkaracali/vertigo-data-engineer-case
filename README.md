@@ -69,7 +69,11 @@ To run the analytical models and view documentation:
    dbt docs serve 
 
 ### 📊 Visualization
-The final transformation layer is visualized through a Looker Studio Dashboard, focusing on
+The final transformation layer is visualized through a **Looker Studio Dashboard**.
+
+🔗 **[Click Here to View the Live Dashboard](https://lookerstudio.google.com/reporting/aabebc80-a2da-44e8-aa4f-01d3cdfb37f5)**
+
+The dashboard focused on:
 - **Monetization Trends:** Daily revenue tracking vs. DAU growth.
 - **Platform Performance:** Comparison of stability and engagement between iOS and Android.
 - **Global Reach:** Revenue and user distribution by country.
