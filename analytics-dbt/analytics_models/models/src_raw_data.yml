@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: vertigo-case-488119
+    schema: raw_data
+    tables:
+      - name: user_daily_metrics
