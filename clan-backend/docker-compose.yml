@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:17
+    container_name: vertigo-postgres
+    environment:
+      POSTGRES_USER: vertigo
+      POSTGRES_PASSWORD: vertigo123
+      POSTGRES_DB: vertigo_db
+      TZ: UTC
+    command: ["postgres", "-c", "timezone=UTC"]
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: vertigo-web
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://vertigo:vertigo123@db:5432/vertigo_db
+      TZ: UTC
+    ports:
+      - "8000:8000"
+
+  seed:
+    build: .
+    container_name: vertigo-seed
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://vertigo:vertigo123@db:5432/vertigo_db
+      TZ: UTC
+      PYTHONPATH: /app
+    command: ["python", "scripts/seed_sample_data.py"]
+
+volumes:
+  pgdata:

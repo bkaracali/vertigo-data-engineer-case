@@ -1,0 +1,8 @@
+venv
+__pycahche__
+.git
+*.pyc
+*.pyo
+*.pyd
+.env
+data
