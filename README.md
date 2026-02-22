@@ -92,12 +92,11 @@ The final transformation layer is visualized through a Looker Studio Dashboard, 
     # pip install -r requirements.txt
     docker-compose up --build
 3. Setup & Run Part 2 (dbt)
-First, ensure you have dbt installed:
     ```bash
     pip install dbt-bigquery
-Then, navigate to the project and run:
+4. Navigate to the project and run:
     ```bash
     cd analytics-dbt/analytics_models
     dbt deps
     dbt run
-    ```
+    
