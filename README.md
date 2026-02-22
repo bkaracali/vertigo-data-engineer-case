@@ -1,6 +1,6 @@
-# Vertigo Games - Data Engineer Case Study
+# Vertigo Analytics: End-to-End Event Processing & BI Infrastructure
 
-This repository contains a two-part solution for the Vertigo Games Data Engineer case. 
+A comprehensive data infrastructure project featuring a **Backend API** for event collection, a **dbt-powered** transformation layer on **BigQuery**, and a professional **Looker Studio** dashboard.
 
 - **Part 1:** A robust Backend API for managing game clans, integrated with Google Cloud.
 - **Part 2:** Analytical data modeling using dbt and BigQuery.
