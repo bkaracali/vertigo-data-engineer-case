@@ -103,4 +103,9 @@ The dashboard focused on:
     cd analytics-dbt/analytics_models
     dbt deps
     dbt run
-    
+
+### 💡 Post-Submission Improvements
+After the initial submission, I conducted a brief self-review and implemented the following enhancements to improve system reliability and data integrity:
+- **Unique Clan Constraints:** Added a unique constraint to the name column in the database to prevent duplicate entries.
+- **Case-Insensitive Validation:** Implemented a case-insensitive check in the service layer (using func.lower). This ensures that names like "Warriors", "warriors", and "WARRIORS" are treated as the same, preventing naming conflicts.
+- **Improved Error Handling:** Integrated explicit exception handling to return a 400 Bad Request with a clear descriptive message when a duplicate clan name is attempted.
