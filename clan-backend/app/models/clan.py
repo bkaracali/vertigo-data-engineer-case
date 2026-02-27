@@ -9,7 +9,7 @@ class Clan(Base):
     __tablename__ = "clans"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    name = Column(String, nullable=False)
+    name = Column(String, nullable=False, unique=True)
     region = Column(String, nullable=False)
     created_at = Column(
     DateTime(timezone=True),

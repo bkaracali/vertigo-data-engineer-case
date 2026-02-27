@@ -1,8 +1,19 @@
 from sqlalchemy.orm import Session
 from app.models.clan import Clan
+from sqlalchemy import func
 from uuid import UUID
+from fastapi import HTTPException
 
 def create_clan(db: Session, name: str, region: str):
+
+    existing_clan = db.query(Clan).filter(
+        func.lower(Clan.name) == func.lower(name)).first()
+    
+    if existing_clan:
+        raise HTTPException(
+            status_code=400, 
+            detail=f"Clan with name '{name}' already exists.")
+
     clan = Clan(name=name, region=region)
     db.add(clan)
     db.commit()
