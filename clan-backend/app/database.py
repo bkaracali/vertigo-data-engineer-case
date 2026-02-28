@@ -7,11 +7,10 @@ from sqlalchemy.orm import Session
 
 load_dotenv()
 
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    # Cloud Run default connection format:
-    "postgresql+psycopg2://vertigo:vertigo123@/vertigo_db?host=/cloudsql/vertigo-case-488119:europe-central2:vertigo-db-instance"
-)
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    DATABASE_URL = "postgresql+psycopg2://vertigo:vertigo123@localhost:5433/vertigo_db"
 
 engine = create_engine(
     DATABASE_URL,
