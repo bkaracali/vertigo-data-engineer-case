@@ -1,6 +1,6 @@
-# Vertigo Analytics: End-to-End Event Processing & BI Infrastructure
+# Gaming Analytics: Scalable Event Ingestion API & Data Pipeline Infrastructure
 
-A comprehensive data infrastructure project featuring a **Backend API** for event collection, a **dbt-powered** transformation layer on **BigQuery**, and a professional **Looker Studio** dashboard.
+A comprehensive data infrastructure project featuring a **Backend API** for event collection, a **dbt-powered** transformation layer on **BigQuery**, and a **Looker Studio** dashboard.
 
 - **Part 1:** A robust Backend API for managing game clans, integrated with Google Cloud.
 - **Part 2:** Analytical data modeling using dbt and BigQuery.
@@ -87,8 +87,8 @@ The dashboard focused on:
 
 1. Clone the Repository
     ```bash
-    git clone https://github.com/bkaracali/vertigo-data-engineer-case.git
-    cd vertigo-data-engineer-case
+    git clone https://github.com/bkaracali/gaming-analytics-pipeline-gcp.git
+    cd gaming-analytics-pipeline-gcp
 2. Setup & Run Part 1 (Backend API)
     ```bash
     cd clan-backend
